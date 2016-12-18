@@ -84,7 +84,7 @@ function parseToStringType(text) {
 	case text.toLowerCase().indexOf("solution")!=-1||text.toLowerCase().indexOf("fix")!=-1||lowerCase.indexOf("show me what to do")!=-1||lowerCase.indexOf("can you show me what to do")!=-1||lowerCase.indexOf("some ways")!=-1:
         return stringType[2]; 
         break;
-	case lowerCase.indexOf("hurry")!=-1||lowerCase.indexOf("you are the best")!=-1||lowerCase.indexOf("you the best")!=-1||lowerCase.indexOf("bless")!=-1||lowerCase.indexOf("thank you")==0||lowerCase.indexOf("cannot wait")!=-1||lowerCase.indexOf("take too long")!=-1||lowerCase.indexOf("how are you")!=-1||lowerCase.indexOf("Are you good")!=-1||lowerCase.indexOf("Are feeling ok")!=-1||lowerCase.indexOf("wtf")!=-1||lowerCase.indexOf("fuck")!=-1||lowerCase.indexOf("hell")!=-1||lowerCase.indexOf("shit")!=-1:
+	case lowerCase.indexOf("hurry")!=-1||lowerCase.indexOf("you are the best")!=-1||lowerCase.indexOf("you the best")!=-1||lowerCase.indexOf("bless")!=-1||lowerCase.indexOf("thank you")==0||lowerCase.indexOf("thanks")==0||lowerCase.indexOf("cannot wait")!=-1||lowerCase.indexOf("take too long")!=-1||lowerCase.indexOf("how are you")!=-1||lowerCase.indexOf("Are you good")!=-1||lowerCase.indexOf("Are feeling ok")!=-1||lowerCase.indexOf("wtf")!=-1||lowerCase.indexOf("fuck")!=-1||lowerCase.indexOf("hell")!=-1||lowerCase.indexOf("shit")!=-1:
         return stringType[3]; 
         break;
 	default:
@@ -138,7 +138,7 @@ function social(recipientId, text) {
 			message = {
                "text":"Please calm down, I am doing the best I can"
             };
-		}if(lowerCase.indexOf("bless")!=-1||lowerCase.indexOf("thank you")==0){
+		}if(lowerCase.indexOf("bless")!=-1||lowerCase.indexOf("thank you")==0||lowerCase.indexOf("thanks")==0){
 			message = {
                "text":"Thank you, It is my pleasure"
             };
@@ -156,7 +156,7 @@ function social(recipientId, text) {
 		}
 		if(type==="SOLUTION"){
 		message = {
-               "text":""
+               "text":"Firstly: you have to actively harvest the crop that is ready in the right time. Secondly: Be mindful of the fertilizer at all time. For further information, you can contact our specialists."
             };
             sendMessage(recipientId, message);
             return true;
